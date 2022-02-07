@@ -82,7 +82,7 @@ void optionelFunction2(int a, {int b = 0, int? c}) => print(
 
 void optionelFunction3({int a = 0, int b = 0, int? c}) => print(
     "a, b and c parameters are optionel. a and b default values are 0 and c default value is null.");
- /*
+/*
     this function call like that ;
     optionelFunction3(a:5);
     optionelFunction3(b:5, a:6);
@@ -94,3 +94,31 @@ void optionelFunction3({int a = 0, int b = 0, int? c}) => print(
  *we can write return type top of function.
  *if it do not return value, we can write "void" top of function.
 */
+
+//----------------------------------------------------------------------
+
+int function1(int a, int b) {
+  return a + b;
+}
+
+Function function2 = (int a, int b) {
+  return a + b;
+};
+// Call function ->  function1(5,6);
+
+var function3 = (int a, int b) => (a + b);
+
+// function1,function2 and function3 are same functions.
+
+//----------------------------------------------------------------------
+// HIGHER ORDER FUNCTIONS
+
+void printIndex(String value, int index) {
+  print("Value : $value and index : $value");
+}
+
+void getIndex(List<String> list, Function printFunction) {
+  for (var i = 0; i < list.length; i++) {
+    printFunction(list[i], i);
+  }
+}

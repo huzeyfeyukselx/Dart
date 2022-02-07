@@ -1,6 +1,20 @@
 void main(List<String> args) {
   //LIST:
   List<int> numbersTwo = List<int>.filled(5, 2);
+  List<int> numbersWithFunction = List<int>.generate(5, (index) => index + 5);
+  List<int> numbersUnmodifiable = List.unmodifiable([1, 2, 3]);
+  numbersUnmodifiable.add(6); // Runtime ERROR. We can not add a member.
+  bool result = numbersUnmodifiable.any((element) => element > 2);
+  // result is true
+  bool result2 = numbersUnmodifiable.every((element) => element > 2);
+  // result2 is true
+  var result3 = numbersUnmodifiable.every((element) => element == 2);
+  // result3 is 2
+
+  var newList1 = numbersUnmodifiable.map((e) => e + 40).toList();
+  var newList2 = numbersUnmodifiable.map((e) => e + 40).toSet();
+  Map<int, int> listTOmap = numbersWithFunction.asMap();
+
   // ! or : List<int> numbersTwo = List<int>.filled(5, 2);
   print(numbersTwo); // output : [2, 2, 2, 2, 2]
 
